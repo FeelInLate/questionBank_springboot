@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boot.mapper.QuesBankMapper">
+    <update id="update">
+        update QuesBank
+        <set>
+            <if test="qname != null">
+                qname = #{qname},
+            </if>
+            <if test="qtype != null">
+                qtype = #{qtype},
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>
